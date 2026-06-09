@@ -1,0 +1,12 @@
+{
+  "name": "13_feb_2_3",
+  "version": "1.0.0",
+  "description": "Node.js tutorial server using Express with two endpoints: GET / returns \"Hello world\" and GET /good-evening returns \"Good evening\".",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js"
+  },
+  "dependencies": {
+    "express": "^5.2.1"
+  }
+}
