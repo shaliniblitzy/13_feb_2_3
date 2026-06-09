@@ -1,6 +1,8 @@
 # Blitzy Project Guide — `13_feb_2_3` Express Tutorial Server
 
-> **Project status color key:** Completed / AI Work = Dark Blue `#5B39F3` · Remaining / Not Completed = White `#FFFFFF` · Headings & Accents = Violet-Black `#B23AF2` · Highlight = Mint `#A8FDD9`
+> **Project Status Color Key:** Completed / AI Work = Dark Blue `#5B39F3` · Remaining / Not Completed = White `#FFFFFF` · Headings & Accents = Violet-Black `#B23AF2` · Highlight = Mint `#A8FDD9`
+>
+> **Branch:** `blitzy-00736d9b-6cad-49ba-a9d8-1091cddfb841` · **HEAD:** `d0d46b6` · **Working tree:** CLEAN
 
 ---
 
@@ -8,55 +10,61 @@
 
 ### 1.1 Project Overview
 
-`13_feb_2_3` is a minimal Node.js tutorial web server built on the **Express 5** framework. Its objective is to demonstrate HTTP routing by exposing two `GET` endpoints that return plaintext greetings: `GET /` → `Hello world` (baseline) and `GET /good-evening` → `Good evening` (the requested new feature). The target users are developers learning Express fundamentals. The repository was **greenfield** — it tracked only a placeholder `README.md` — so the entire runnable foundation (manifest, entry file, dependency lock, ignore rules, documentation) was scaffolded from scratch. Technical scope is intentionally narrow: framework integration (`express@5.2.1`), two routes, and setup/run documentation. All scoped work is implemented and runtime-validated.
+The project integrates the Express.js framework into a previously empty repository to deliver a minimal Node.js tutorial HTTP server. It exposes two `GET` endpoints — `/` returning `Hello world` (baseline, preserved) and `/good-evening` returning `Good evening` (the newly added feature) — fulfilling the user's request to add Express and a second endpoint. Target users are developers learning Express routing fundamentals. Technical scope covers a single CommonJS entry point (`index.js`), an npm manifest and lockfile pinning `express@5.2.1`, a `.gitignore`, and README documentation. Because the repository was greenfield — only a placeholder README existed — the baseline server was scaffolded from scratch. Business impact: a working, reproducible reference implementation.
 
 ### 1.2 Completion Status
 
 ```mermaid
-%%{init: {'theme':'base', 'themeVariables': {'pie1':'#5B39F3','pie2':'#FFFFFF','pieStrokeColor':'#B23AF2','pieStrokeWidth':'2px','pieOuterStrokeWidth':'2px','pieOuterStrokeColor':'#B23AF2','pieSectionTextColor':'#111111','pieTitleTextSize':'18px','pieLegendTextSize':'15px'}}}%%
-pie showData title Completion Status: 90.0% Complete (9.0h of 10.0h)
-    "Completed Work — AI (9.0h)" : 9
-    "Remaining Work (1.0h)" : 1
+%%{init: {"theme":"base","themeVariables":{"pie1":"#5B39F3","pie2":"#FFFFFF","pieStrokeColor":"#B23AF2","pieStrokeWidth":"2px","pieOuterStrokeWidth":"2px","pieSectionTextColor":"#A8FDD9","pieLegendTextColor":"#1A1A1A","pieTitleTextColor":"#B23AF2"}}}%%
+pie showData title Completion — 87.5% Complete (Hours)
+    "Completed Work (AI) — #5B39F3" : 7
+    "Remaining Work — #FFFFFF" : 1
 ```
 
 | Metric | Value |
 |---|---|
-| **Total Hours** | **10.0** |
-| **Completed Hours (AI + Manual)** | **9.0** (9.0 AI + 0.0 Manual) |
+| **Total Hours** | **8.0** |
+| **Completed Hours (AI + Manual)** | **7.0** (AI 7.0 + Manual 0.0) |
 | **Remaining Hours** | **1.0** |
-| **Percent Complete** | **90.0%** |
+| **Percent Complete** | **87.5%** |
 
-> Completion is computed with the AAP-scoped, hours-based methodology: `9.0 ÷ 10.0 × 100 = 90.0%`. All four AAP requirements (R1–R4) and all five in-scope file deliverables are **fully delivered and runtime-verified**; the remaining 1.0 hour is human acceptance/verification work only (no engineering gaps).
+> **Calculation:** `Completion % = Completed ÷ (Completed + Remaining) = 7.0 ÷ (7.0 + 1.0) = 7.0 ÷ 8.0 = 87.5%`. Percentage reflects only AAP-scoped deliverables (R1–R4) plus standard path-to-production activities; explicitly out-of-scope items (AAP §0.3.2) are excluded.
 
 ### 1.3 Key Accomplishments
 
-- ✅ **Express 5.2.1 integrated** as the sole production dependency (R1) — pinned `^5.2.1`, locked to `5.2.1`, **0 vulnerabilities**.
-- ✅ **Baseline endpoint** `GET /` returns the exact string `Hello world` (R2) — runtime-verified `[HTTP 200]`.
-- ✅ **New endpoint** `GET /good-evening` returns the exact string `Good evening` (R3) — runtime-verified `[HTTP 200]`.
-- ✅ **Full Node.js scaffolding created** — `package.json`, `package-lock.json` (lockfileVersion 3), `.gitignore` (R4).
-- ✅ **Documentation complete** — `README.md` covers prerequisites (Node `>= 18`), install, run, `PORT` override, and an endpoints table.
-- ✅ **`PORT` env override validated** — default `3000`, independently tested on `8080`.
-- ✅ **Reproducible install verified** — `npm ci` → "added 66 packages, audited 67, found 0 vulnerabilities".
-- ✅ **All 5 in-scope files committed**; working tree clean at HEAD `dd76ee5`; `node_modules/` correctly git-ignored.
+- ✅ **Express.js integrated (R1):** `express@^5.2.1` declared in `package.json`, locked to `5.2.1` in `package-lock.json` (lockfileVersion 3); `npm ci` installs 66 packages with **0 vulnerabilities**.
+- ✅ **Baseline endpoint preserved (R2):** `GET /` returns the exact plaintext `Hello world` (byte-verified, 11 bytes) with HTTP 200, served through Express.
+- ✅ **New endpoint added (R3):** `GET /good-evening` returns the exact plaintext `Good evening` (byte-verified, 12 bytes) with HTTP 200.
+- ✅ **Project scaffolding complete (R4):** `index.js` (CommonJS entry, `PORT || 3000` listener, full JSDoc), `package.json` (`start` script), `package-lock.json`, `.gitignore`, and a documented `README.md`.
+- ✅ **Runtime verified:** server boots cleanly; unknown routes return HTTP 404; `PORT` environment override confirmed (8080/3100).
+- ✅ **Clean compilation:** `node --check index.js` exits 0; `npm ls` resolves a clean dependency tree.
+- ✅ **Repository hygiene:** all five in-scope files committed on a clean working tree; `node_modules/` correctly git-ignored.
 
 ### 1.4 Critical Unresolved Issues
 
+**No critical (release-blocking) issues identified.** All AAP requirements are implemented and runtime-verified. The only open items are non-blocking confirmations carried over from the AAP's flagged assumptions.
+
 | Issue | Impact | Owner | ETA |
 |---|---|---|---|
-| _None identified_ | All AAP requirements (R1–R4) are implemented and runtime-validated; no compilation errors, failing tests, or unresolved defects. | — | — |
+| Confirm new route path `/good-evening` matches stakeholder intent (AAP §0.8.2 flagged this — the user specified the response, not the path) | Low — endpoint works; only the path name needs sign-off | Human reviewer | During code review (≤0.5h) |
+| Confirm default port `3000` (overridable via `PORT`) is acceptable | Low — already overridable without code change | Human reviewer | During code review (within above) |
 
 ### 1.5 Access Issues
 
-| System / Resource | Type of Access | Issue Description | Resolution Status | Owner |
+**No access issues identified.** All validation commands (`git`, `node`, `npm`, `curl`) executed successfully with no permission, credential, or network-access barriers. The project requires no external services, API keys, or third-party credentials.
+
+| System/Resource | Type of Access | Issue Description | Resolution Status | Owner |
 |---|---|---|---|---|
-| _None_ | — | No access issues identified. The repository, npm registry cache, Node/npm runtime, and local ports were all accessible during autonomous validation. | N/A | — |
+| Git repository | Read/Write | None | ✅ No issue | — |
+| npm registry (install-time) | Read | None — `npm ci` succeeded offline against committed lockfile | ✅ No issue | — |
+| Runtime host (localhost) | Network bind | None — server binds port 3000/override | ✅ No issue | — |
 
 ### 1.6 Recommended Next Steps
 
-1. **[Medium]** Confirm the AAP-flagged assumptions with the requester: route path `GET /good-evening` (the user specified the response string, not the path), default port `3000`, and the greenfield-baseline interpretation (the server was **created**, not modified, because the repo had only a placeholder README).
-2. **[Medium]** Perform a local environment smoke-test on the target machine: `npm install` → `npm start` → `curl` both endpoints.
-3. **[Low]** _(Optional — beyond AAP scope)_ Add an automated test suite (Jest + Supertest) if the project will be extended past tutorial scope.
-4. **[Low]** _(Optional — beyond AAP scope)_ Add security hardening (helmet, CORS) and pin the Node version (`engines` / `.nvmrc`) before any public deployment.
+1. **[High]** Review the five in-scope files (`index.js`, `package.json`, `package-lock.json`, `.gitignore`, `README.md`) and confirm the AAP-flagged assumptions (route path, verbatim response strings, default port). *(~0.5h)*
+2. **[High]** Approve and merge the PR to `main`, then run the post-merge smoke test (`npm ci` → `npm start` → `curl` both endpoints, verify 404). *(~0.5h)*
+3. **[Low]** *(Optional, out of AAP scope)* If the tutorial is later productionized, pin Node via a `package.json` `engines` field and consider `res.type('text/plain')` for strict plaintext responses.
+4. **[Low]** *(Optional, out of AAP scope)* Add automated tests (Jest + supertest), production hardening (helmet/CORS/rate limiting/HTTPS), and a deployment pipeline (Docker/CI) only if scope expands beyond the tutorial.
 
 ---
 
@@ -65,160 +73,175 @@ pie showData title Completion Status: 90.0% Complete (9.0h of 10.0h)
 ### 2.1 Completed Work Detail
 
 | Component | Hours | Description |
-|---|---:|---|
-| Project scaffolding & Express 5.2.1 integration (R1, R4) | 2.5 | `package.json` manifest, `npm install`, `package-lock.json` (66 packages, 0 vulnerabilities), `.gitignore`; web research confirming `express@5.2.1` + Node `>= 18` compatibility |
-| Baseline endpoint `GET /` → `Hello world` (R2) | 1.0 | Express route handler in `index.js` returning the exact baseline string |
-| New endpoint `GET /good-evening` → `Good evening` (R3) | 1.0 | Express route handler in `index.js` returning the exact new-feature string |
-| Express app bootstrap & runtime entry (R2, R3) | 1.5 | App instantiation, `PORT` env handling, `app.listen` + startup log, CommonJS structure, comprehensive JSDoc |
-| README documentation (R4) | 1.5 | Description, prerequisites, installation, usage, `PORT` override, endpoints table, curl examples |
-| Runtime validation & verification | 1.5 | Multi-port boot, exact body + status-code assertions, 404 check, content-type check, `npm audit` |
-| **Total Completed** | **9.0** | Matches Completed Hours in §1.2 |
+|---|---|---|
+| Express integration & dependency management (R1, R4c) | 1.5 | Declared `express@^5.2.1` in `package.json`; ran `npm install` resolving Express + 65 transitive packages; generated `package-lock.json` (lockfileVersion 3, locked 5.2.1); verified current stable version & Node ≥18 compatibility. |
+| Express application entry — `index.js` (R2, R3, R4b) | 2.0 | Instantiated Express app; implemented `GET /` → `Hello world` and `GET /good-evening` → `Good evening` (verbatim strings); `app.listen(process.env.PORT || 3000)` with startup log; comprehensive JSDoc; `'use strict'`. |
+| Project manifest & VCS hygiene (R4a, R4d) | 1.0 | `package.json` fields (`name`, `version`, `description`, `main`, `scripts.start`, `license`, `keywords`, `author`); `.gitignore` excluding `node_modules/` and npm log artifacts. |
+| Documentation — `README.md` (R4e) | 1.0 | Project description, prerequisites (Node ≥18), installation, usage (`npm start`), `PORT` override, endpoints table, and `curl` examples. |
+| Autonomous validation & runtime verification | 1.5 | Five production-readiness gates; byte-exact response checks; 404 fallback; `PORT` override; `npm audit` (0 vulnerabilities); `node --check` compilation. |
+| **Total Completed** | **7.0** | **Matches Completed Hours in §1.2.** |
 
 ### 2.2 Remaining Work Detail
 
 | Category | Hours | Priority |
-|---|---:|---|
-| Stakeholder acceptance of AAP-flagged assumptions (route path `/good-evening`, default port `3000`, greenfield baseline) | 0.5 | Medium |
-| Local environment smoke-test (`npm install` → `npm start` → `curl` both endpoints) | 0.5 | Medium |
-| **Total Remaining** | **1.0** | Matches Remaining Hours in §1.2 and §7 |
+|---|---|---|
+| Human code review of the 5 in-scope files + confirm AAP §0.8.2 open assumptions (route path, verbatim strings, default port) | 0.5 | High |
+| PR merge to `main` + post-merge local smoke test (`npm ci` → `npm start` → `curl` both endpoints, verify 404) | 0.5 | High |
+| **Total Remaining** | **1.0** | **Matches Remaining Hours in §1.2 and §7 pie chart.** |
 
-### 2.3 Out-of-Scope / Optional Enhancements (Not Counted in Totals)
+### 2.3 Hours Calculation & Out-of-Scope Notes
 
-The following are **explicitly excluded by the AAP (§0.3.2)** and are therefore **not** part of the 10.0-hour total or the completion percentage. They are listed only as guidance should the project be taken beyond its stated tutorial purpose:
+**Calculation summary (AAP-scoped, PA1 methodology):**
 
-| Optional Enhancement | Indicative Hours | Note |
-|---|---:|---|
-| Automated tests (Jest + Supertest) | ~2–4 | Out of AAP scope; no tests requested |
-| Security hardening (helmet, CORS, rate limiting, TLS) | ~2–3 | Required only for public deployment |
-| Containerization (Dockerfile) and/or CI pipeline | ~4–8 | Out of AAP scope; no deployment requested |
-| Pin Node version (`engines` field / `.nvmrc`) | ~0.5 | Nice-to-have hygiene |
+```
+Completed Hours   = 1.5 + 2.0 + 1.0 + 1.0 + 1.5 = 7.0
+Remaining Hours   = 0.5 + 0.5                   = 1.0
+Total Project Hrs = 7.0 + 1.0                   = 8.0
+Percent Complete  = 7.0 ÷ 8.0                   = 87.5%
+```
+
+**Out-of-scope enhancements (NOT counted in the 8.0h total or 87.5% — informational only).** Per AAP §0.3.2, the following are explicitly excluded from this task and therefore excluded from the completion denominator. They are listed solely as future guidance should the project grow beyond a tutorial:
+
+| Optional Enhancement (out of scope) | Indicative Effort | Related Risk |
+|---|---|---|
+| Pin Node via `package.json` `engines` field | ~0.25h | T3 |
+| `res.type('text/plain')` for strict plaintext content-type | ~0.25h | T1 |
+| Automated tests (Jest + supertest) | ~2–3h | T2 |
+| Production hardening (helmet, CORS, rate limiting, HTTPS) | ~3–4h | S1 |
+| Operations (`/health` endpoint, structured logging, process manager) | ~2–3h | O1, O2 |
+| Deployment automation (Dockerfile, CI/CD) | ~3–5h | — |
 
 ---
 
 ## 3. Test Results
 
-All results below originate from Blitzy's autonomous validation logs for this project and were independently re-confirmed during this assessment. **No automated test framework is in scope** (AAP §0.3.2 explicitly excludes tests); functional correctness is therefore proven by runtime validation rather than a unit-test suite.
+All entries below originate from Blitzy's autonomous validation logs for this project and were independently re-executed on Node `v20.20.2` / npm `11.1.0`. The project has **no automated unit/integration test framework by design** (tests are out of scope per AAP §0.3.2 / §0.8.1); functional correctness is proven through autonomous runtime and static validation.
 
-| Test Category | Framework | Total | Passed | Failed | Coverage % | Notes |
-|---|---:|---:|---:|---:|---:|---|
-| Automated Unit/Integration | None (excluded by design) | 0 | 0 | 0 | N/A | AAP §0.3.2 excludes test frameworks/files. `npm test` → "Missing script: test" is the documented expected state. 0/0 = no failing tests (vacuous pass). |
-| Runtime Functional Validation | Node runtime + `curl` | 5 | 5 | 0 | N/A | `GET /`→`Hello world`/200; `GET /good-evening`→`Good evening`/200; unknown route→404; `PORT=8080` override; Content-Type `text/html; charset=utf-8` |
-| Static / Compile Check | `node --check` | 1 | 1 | 0 | N/A | CommonJS syntax of `index.js` valid (exit 0) — this is the compile gate (no TS/bundler in scope) |
-| Dependency Audit | `npm audit` | 1 | 1 | 0 | N/A | 67 packages audited; **0 vulnerabilities** |
-| Reproducible Install | `npm ci` | 1 | 1 | 0 | N/A | Strict install from `package-lock.json`: added 66 packages, 0 vulnerabilities, exit 0 |
-| **Totals** | | **8** | **8** | **0** | **N/A** | 100% pass rate across all autonomous validation checks |
+| Test Category | Framework | Total Tests | Passed | Failed | Coverage % | Notes |
+|---|---|---|---|---|---|---|
+| Functional / HTTP Endpoint | `curl` + Node runtime (autonomous) | 5 | 5 | 0 | 100% of routes | `GET /` → 200 `Hello world`; `GET /good-evening` → 200 `Good evening`; unknown → 404; byte-exact `Hello world` (11 B); byte-exact `Good evening` (12 B) |
+| Configuration / Runtime | Node runtime (autonomous) | 2 | 2 | 0 | n/a | Default port 3000 bind + startup log; `PORT` override (8080 / 3100) bind + serve |
+| Compilation / Static | `node --check` | 1 | 1 | 0 | n/a | `index.js` syntax valid, exit 0 |
+| Dependency / Security | `npm ci` + `npm audit` | 2 | 2 | 0 | n/a | 66 packages installed (67 audited); **0 vulnerabilities** |
+| Unit / Integration / E2E (automated) | — (none) | 0 | 0 | 0 | n/a | **Out of scope by design** (AAP §0.3.2/§0.8.1); `npm test` → "Missing script: test" is expected, not a failure |
+| **Totals** | | **10** | **10** | **0** | — | **100% pass rate across all autonomous validation checks** |
+
+> **Coverage note:** "100% of routes" denotes functional behavior exercised at runtime (both declared routes plus the default 404 fallback), not instrumented line coverage — no coverage tooling is in scope.
 
 ---
 
 ## 4. Runtime Validation & UI Verification
 
-**Runtime health (all checks performed against the live server):**
+**UI Verification:** Not applicable. This is a backend HTTP server returning short plaintext responses; there is no graphical user interface, component library, or design system (AAP §0.5.3).
 
-- ✅ **Operational** — Server boot: `npm start` → `Server listening on http://localhost:3000`
-- ✅ **Operational** — `GET /` → body `Hello world`, `[HTTP 200]`, `Content-Type: text/html; charset=utf-8`
-- ✅ **Operational** — `GET /good-evening` → body `Good evening`, `[HTTP 200]`
-- ✅ **Operational** — Unknown route (`GET /nonexistent`) → Express default `404` (`Cannot GET /nonexistent`)
-- ✅ **Operational** — `PORT` override: `PORT=8080 npm start` binds `:8080`; both endpoints serve correctly
-- ✅ **Operational** — Dependency resolution: `require('express')` → `express@5.2.1`; `npm ls` clean tree
+**Runtime Health (independently verified):**
 
-**UI verification:**
+- ✅ **Server boot** — `npm start` logs `Server listening on http://localhost:3000`; process stays alive.
+- ✅ **`GET /`** — returns `Hello world`, HTTP **200**, `Content-Type: text/html; charset=utf-8`.
+- ✅ **`GET /good-evening`** — returns `Good evening`, HTTP **200**.
+- ✅ **Unknown route** (`GET /unknown`) — returns Express default **404**.
+- ✅ **`PORT` override** — `PORT=8080` / `PORT=3100` bind and serve correctly.
+- ✅ **Byte-exactness** — responses verified via `od -c` (`Hello world` = 11 bytes, `Good evening` = 12 bytes); verbatim match to the user's requested strings.
+- ✅ **Dependency install** — `npm ci` reproducible from lockfile, 0 vulnerabilities.
+- ✅ **Compilation** — `node --check index.js` passes.
 
-- **Not applicable** — this is a backend HTTP server returning plaintext (AAP §0.5.3). There is no graphical user interface, component library, or design system.
-
-**API integration:**
-
-- **Not applicable** — the application has **no external service integrations** (no databases, third-party APIs, message queues, or webhooks). Its only dependency is the Express framework itself.
+**API Integration Outcomes:** No external/third-party API integrations are in scope; none required. All endpoints are self-contained.
 
 ---
 
 ## 5. Compliance & Quality Review
 
-| AAP Requirement / Quality Benchmark | Status | Progress | Evidence / Notes |
-|---|---|---|---|
-| R1 — Add Express.js (`express@5.2.1`) | ✅ Pass | 100% | Declared `^5.2.1` in `package.json`; locked `5.2.1` in `package-lock.json`; `npm ls` clean |
-| R2 — `GET /` → `Hello world` | ✅ Pass | 100% | `index.js` L44–46; runtime body+200 verified |
-| R3 — `GET /good-evening` → `Good evening` | ✅ Pass | 100% | `index.js` L54–56; runtime body+200 verified |
-| R4 — Minimal scaffolding + docs | ✅ Pass | 100% | `package.json`, `package-lock.json`, `.gitignore`, `README.md` all present & valid |
-| Verbatim response strings preserved | ✅ Pass | 100% | `Hello world` / `Good evening` reproduced character-for-character |
-| Backward compatibility (`Hello world` reachable) | ✅ Pass | 100% | Change is strictly additive; `GET /` preserved |
-| Express used for routing (not raw `http`) | ✅ Pass | 100% | `const app = express()`; both routes declared on the app |
-| Pinned dependency version (no `latest`) | ✅ Pass | 100% | Exact version `5.2.1` verified against registry |
-| Zero-placeholder policy | ✅ Pass | 100% | No stubs, TODOs, or `NotImplemented`; complete implementation |
-| Dependency security | ✅ Pass | 100% | `npm audit` → 0 vulnerabilities |
-| Version-control hygiene (`node_modules/` ignored) | ✅ Pass | 100% | `git check-ignore` confirms; only 5 in-scope files tracked |
-| **Fixes applied during autonomous validation** | — | — | **None required** — every gate passed on first verification |
-| **Outstanding compliance items** | ⚠ Open | — | Human acceptance of AAP-flagged assumptions (route path, port, greenfield baseline) — 1.0h, non-blocking |
+| AAP Requirement / Quality Benchmark | Status | Evidence / Fixes Applied |
+|---|---|---|
+| **R1** — Add Express.js (`express@5.2.1`) | ✅ Pass | Declared `^5.2.1`, locked `5.2.1`; installed clean. No fixes needed. |
+| **R2** — `GET /` → `Hello world` via Express | ✅ Pass | `index.js` L44–46; runtime 200, byte-exact. No fixes needed. |
+| **R3** — `GET /good-evening` → `Good evening` | ✅ Pass | `index.js` L54–56; runtime 200, byte-exact. No fixes needed. |
+| **R4** — Minimal scaffolding + docs | ✅ Pass | `package.json`, `index.js`, `package-lock.json`, `.gitignore`, `README.md` all present & correct. No fixes needed. |
+| Verbatim response strings preserved | ✅ Pass | Byte-exact `Hello world` / `Good evening` confirmed. |
+| Backward compatibility (baseline reachable) | ✅ Pass | `GET /` still serves `Hello world`; change is purely additive. |
+| Framework directive (routes via Express) | ✅ Pass | Both routes registered on the Express app (not raw `http`). |
+| Pinned, non-placeholder dependency version | ✅ Pass | `express@5.2.1` verified against registry; no `latest`. |
+| Dependency security (`npm audit`) | ✅ Pass | 0 vulnerabilities. |
+| Code quality (no anti-patterns, documented) | ✅ Pass | `'use strict'`, comprehensive JSDoc, no TODO/placeholder/stub code. |
+| Repository hygiene (`node_modules/` ignored, clean tree) | ✅ Pass | `.gitignore` excludes `node_modules/`; working tree clean. |
+| Scope discipline (no out-of-scope additions) | ✅ Pass | No tests/middleware/Docker/CI introduced, per AAP §0.3.2. |
+
+**Fixes applied during autonomous validation:** **None required** — the implementation was already complete, correct, and idiomatic; validation reported zero compilation errors, zero runtime errors, and zero dependency issues.
+
+**Outstanding compliance items:** None blocking. Only the non-binding stakeholder confirmation of the assumed route path (see §1.4) remains.
 
 ---
 
 ## 6. Risk Assessment
 
-Overall risk profile: **LOW.** Most items below are deliberate AAP scope exclusions for a tutorial, flagged for awareness if the project is extended toward production.
+All identified risks are **Low** severity. The majority are accepted-by-design consequences of the deliberately minimal tutorial scope (AAP §0.3.2).
 
 | Risk | Category | Severity | Probability | Mitigation | Status |
 |---|---|---|---|---|---|
-| No automated test suite (regressions not auto-caught) | Technical | Low | Low | Add Jest/Supertest if extended; runtime validation covers current scope | Accepted (out of scope) |
-| Express 5 is a recent major; tutorials often show v4 patterns | Technical | Low | Low | Version pinned in lockfile; app uses only stable core routing | Mitigated |
-| `res.send(string)` returns `text/html` (not `text/plain`) | Technical | Low | N/A | AAP §0.5.5 explicitly accepts this for the tutorial | Accepted by design |
-| No security hardening (helmet, CORS, rate limiting, TLS) | Security | Low (local) / Med (public) | Low | Add before any public deployment | Accepted (out of scope) |
-| No input validation | Security | Low | N/A | Endpoints accept no input (static responses); attack surface ~nil | N/A by design |
-| Dependency vulnerabilities | Security | Low | Low | `npm audit` → 0 vulnerabilities; lockfile pins all deps; periodic audit | Mitigated |
-| Minimal logging; no monitoring | Operational | Low | Low | Single startup log adequate for tutorial; add structured logging if extended | Accepted (out of scope) |
-| No process manager / graceful shutdown | Operational | Low | Low | Add PM2/systemd for any long-running deployment | Accepted (out of scope) |
-| Node version drift (requires `>= 18`) | Operational | Low | Low | README documents prerequisite; optional `engines`/`.nvmrc` | Mitigated |
-| `npm install` needs registry/cache (air-gapped envs) | Integration | Low | Low | Committed `package-lock.json` enables reproducible `npm ci` | Mitigated |
-| Port conflict on default `3000` | Integration | Low | Low–Med | `PORT` env override documented & validated on `8080` | Mitigated |
-| No external integrations | Integration | None | N/A | No integration surface exists | N/A |
-| AAP-assumed route path/port/baseline | Requirements | Low | N/A | Stakeholder confirmation (the 1.0h remaining work) | Open (pending acceptance) |
+| `res.send()` returns `Content-Type: text/html` rather than `text/plain` | Technical | Low | Medium | Acceptable for tutorial (AAP §0.5.5); use `res.type('text/plain')` if strict plaintext is required | Accepted (by design) |
+| No automated tests — regressions could go undetected if project grows | Technical | Low | Low | Functional correctness runtime-verified; add Jest/supertest if scope expands | Accepted (out of scope) |
+| Node version not pinned in `package.json` (`engines`); README states ≥18 | Technical | Low | Low | Add an `engines` field to enforce Node ≥18 | Open (minor) |
+| No production hardening (helmet, CORS, rate limiting, HTTPS) | Security | Low | Low | Add hardening before any public deployment; no sensitive data or auth in tutorial | Accepted (out of scope) |
+| Dependency vulnerabilities | Security | Low | Low | `npm audit` reports 0 vulnerabilities; lockfile pins versions; run periodic audits | Mitigated |
+| No health-check endpoint / monitoring / structured logging | Operational | Low | Low | Startup log present; add `/health` + monitoring if deployed as a service | Accepted (out of scope) |
+| No process manager / advanced graceful shutdown | Operational | Low | Low | Use pm2/systemd if deployed | Accepted (out of scope) |
+| Assumed route path `/good-evening` (user specified response, not path) | Integration | Low | Low | Confirm with stakeholder during code review | Open (confirm in review) |
+| External services / API keys / network config | Integration | None | n/a | None required by the task | N/A |
 
 ---
 
 ## 7. Visual Project Status
 
-**Project hours breakdown** (Completed = Dark Blue `#5B39F3`, Remaining = White `#FFFFFF`):
+**Project Hours — Completed vs. Remaining** (Completed = Dark Blue `#5B39F3`, Remaining = White `#FFFFFF`):
 
 ```mermaid
-%%{init: {'theme':'base', 'themeVariables': {'pie1':'#5B39F3','pie2':'#FFFFFF','pieStrokeColor':'#B23AF2','pieStrokeWidth':'2px','pieOuterStrokeWidth':'2px','pieOuterStrokeColor':'#B23AF2','pieSectionTextColor':'#111111','pieTitleTextSize':'18px','pieLegendTextSize':'15px'}}}%%
-pie showData title Project Hours: Completed 9.0h vs Remaining 1.0h
-    "Completed Work" : 9
+%%{init: {"theme":"base","themeVariables":{"pie1":"#5B39F3","pie2":"#FFFFFF","pieStrokeColor":"#B23AF2","pieStrokeWidth":"2px","pieOuterStrokeWidth":"2px","pieSectionTextColor":"#A8FDD9","pieLegendTextColor":"#1A1A1A","pieTitleTextColor":"#B23AF2"}}}%%
+pie showData title Project Hours Breakdown (87.5% Complete)
+    "Completed Work" : 7
     "Remaining Work" : 1
 ```
 
-**Remaining work by category** (hours, from §2.2 — both Medium priority):
+**Remaining Work by Priority** (both remaining items are High priority, totaling 1.0h):
 
 ```mermaid
-%%{init: {'theme':'base', 'themeVariables': {'xyChart': {'plotColorPalette': '#5B39F3'}}}}%%
-xychart-beta
-    title "Remaining Hours by Category"
-    x-axis ["Stakeholder Acceptance", "Local Smoke-Test"]
-    y-axis "Hours" 0 --> 1
-    bar [0.5, 0.5]
+%%{init: {"theme":"base","themeVariables":{"pie1":"#5B39F3","pie2":"#A8FDD9","pieStrokeColor":"#B23AF2","pieStrokeWidth":"2px","pieOuterStrokeWidth":"2px","pieSectionTextColor":"#1A1A1A","pieLegendTextColor":"#1A1A1A","pieTitleTextColor":"#B23AF2"}}}%%
+pie showData title Remaining Hours by Task (Total 1.0h)
+    "Code review & confirm assumptions" : 0.5
+    "PR merge & smoke test" : 0.5
 ```
 
-> **Integrity check:** Pie "Remaining Work" = **1.0h** = §1.2 Remaining Hours = §2.2 total. Pie "Completed Work" = **9.0h** = §1.2 Completed Hours = §2.1 total. `9 + 1 = 10` = Total Project Hours.
+**Completed Hours by Component** (sums to 7.0h):
+
+```mermaid
+xychart-beta
+    title "Completed Hours by Component"
+    x-axis ["Express Integ.", "index.js Entry", "Manifest & Hygiene", "README Docs", "Validation"]
+    y-axis "Hours" 0 --> 2.5
+    bar [1.5, 2.0, 1.0, 1.0, 1.5]
+```
+
+> **Integrity check:** "Remaining Work" = **1.0h** in the pie above equals the Remaining Hours in §1.2 and the sum of the §2.2 Hours column. "Completed Work" = **7.0h** equals the §2.1 total. 7.0 + 1.0 = 8.0 Total.
 
 ---
 
 ## 8. Summary & Recommendations
 
-**Achievements.** The project is **90.0% complete** (9.0 of 10.0 hours). Every AAP requirement has been delivered and independently runtime-validated: Express 5.2.1 is integrated as the sole, vulnerability-free dependency (R1); `GET /` returns `Hello world` (R2); the new `GET /good-evening` returns `Good evening` (R3); and the complete, runnable Node.js scaffolding plus documentation is in place (R4). The implementation contains no stubs, placeholders, or TODOs, and the working tree is clean at HEAD `dd76ee5`.
+**Achievements.** All four AAP requirements (R1–R4) are fully implemented, committed, and runtime-verified with **zero fixes required** during validation. Express 5.2.1 is integrated and pinned; both endpoints return their exact required plaintext responses with correct HTTP status codes; the project installs cleanly with zero vulnerabilities and compiles without error. The implementation is idiomatic, fully documented (JSDoc + README), and free of placeholder or stub code.
 
-**Remaining gaps.** The outstanding **1.0 hour (10%)** is **not engineering work** — it is human acceptance/verification: confirming the AAP-flagged assumptions (route path `/good-evening`, default port `3000`, greenfield baseline) and a local smoke-test in the target environment. No defects, failing tests, or compilation errors remain.
+**Remaining gaps.** The project is **87.5% complete** on an AAP-scoped basis. The remaining **1.0 hour** is purely human path-to-production effort: a brief code review (including confirmation of the AAP-flagged route-path assumption) and the PR merge with a post-merge smoke test. There are no outstanding engineering tasks within the AAP scope.
 
-**Critical path to production.** (1) Stakeholder confirms the flagged assumptions; (2) developer runs `npm install` → `npm start` and curls both endpoints to confirm behavior locally. After these two non-blocking steps the tutorial is ready for its intended use. Items such as automated tests, security hardening, containerization, and CI/CD were **deliberately excluded by the AAP** and are listed in §2.3 only as optional future enhancements.
+**Critical path to production.** Review → confirm assumptions → merge → smoke test. No deployment automation is in scope (the AAP explicitly excludes Docker/CI/CD), so "production" for this tutorial means a reviewed, merged, runnable reference server.
 
-**Success metrics.** 4/4 AAP requirements met · 5/5 in-scope files delivered · 8/8 autonomous validation checks passed · 0 dependency vulnerabilities · 0 unresolved defects.
+**Production readiness assessment.** **Ready for human review and merge.** Every applicable production-readiness gate passed at 100% for the defined scope. All identified risks are Low severity and predominantly accepted-by-design out-of-scope items.
 
-**Production-readiness assessment.** For its **stated tutorial scope**, the project is functionally complete and validated. The 90.0% figure reflects the reservation of human acceptance/verification per Blitzy's honest-assessment policy (never claim 100% before human review), **not** any missing implementation.
-
-| Metric | Value |
-|---|---|
-| Completion | 90.0% |
-| AAP requirements met | 4 / 4 |
-| In-scope files delivered | 5 / 5 |
-| Autonomous validation checks passed | 8 / 8 |
-| Dependency vulnerabilities | 0 |
-| Unresolved defects | 0 |
+| Success Metric | Target | Actual | Status |
+|---|---|---|---|
+| AAP requirements implemented | R1–R4 | R1–R4 | ✅ 4/4 |
+| Endpoints returning exact strings | 2 | 2 | ✅ |
+| Dependency vulnerabilities | 0 | 0 | ✅ |
+| Compilation errors | 0 | 0 | ✅ |
+| Autonomous validation pass rate | 100% | 100% (10/10) | ✅ |
+| AAP-scoped completion | — | 87.5% | ✅ |
 
 ---
 
@@ -226,114 +249,90 @@ xychart-beta
 
 ### 9.1 System Prerequisites
 
-- **Node.js `>= 18`** (Express 5 requirement). Validated on Node `v20.20.2`; AAP proof-of-concept on `v22.22.2`.
-- **npm** (ships with Node.js). Validated on npm `11.1.0`.
-- **Operating system:** any OS supported by Node.js (Linux, macOS, Windows).
-- **Network:** internet access for the first `npm install` (or a populated npm cache for offline `npm ci`).
-
-Verify your toolchain:
+- **Node.js `>= 18`** (Express 5 requirement). Validated on **Node `v20.20.2`** (and per README, Node `v22.22.2`).
+- **npm** (ships with Node.js). Validated on **npm `11.1.0`**.
+- **Operating system:** any OS supported by Node.js (Linux/macOS/Windows).
+- **Hardware:** negligible — a minimal single-process HTTP server.
 
 ```bash
-node --version   # expect v18.x or newer
-npm --version
+node --version    # expect v18+ (validated v20.20.2)
+npm --version     # validated 11.1.0
 ```
 
 ### 9.2 Environment Setup
 
-No special environment configuration is required. The only optional setting is the listening port:
+No environment file is required. A single **optional** variable controls the listening port:
 
 ```bash
 # Optional: override the default port (3000)
 export PORT=8080
 ```
 
-There is no `.env` file, database, cache, or message queue to configure.
-
 ### 9.3 Dependency Installation
 
-From the repository root:
+Run from the repository root. Prefer `npm ci` for a deterministic install from the committed lockfile:
 
 ```bash
-# Standard install (writes/uses package-lock.json)
-npm install
-
-# OR — strict, reproducible install from the committed lockfile (recommended for CI/clean checkouts)
 npm ci
+# Expected: "added 66 packages, and audited 67 packages ... found 0 vulnerabilities"
 ```
 
-Expected output (abridged):
+Alternatively (e.g., to update the lockfile):
 
-```
-added 66 packages, and audited 67 packages in <time>
-found 0 vulnerabilities
+```bash
+npm install
 ```
 
 ### 9.4 Application Startup
 
 ```bash
-npm start          # runs: node index.js
-```
-
-Expected console output:
-
-```
-Server listening on http://localhost:3000
+npm start
+# Runs: node index.js
+# Expected log: Server listening on http://localhost:3000
 ```
 
 To run on a different port:
 
 ```bash
 PORT=8080 npm start
-# → Server listening on http://localhost:8080
+# Expected log: Server listening on http://localhost:8080
 ```
 
-### 9.5 Verification Steps
+### 9.5 Verification
 
 With the server running, in a second terminal:
 
 ```bash
-curl http://localhost:3000/              # → Hello world
-curl http://localhost:3000/good-evening  # → Good evening
+curl http://localhost:3000/              # -> Hello world      (HTTP 200)
+curl http://localhost:3000/good-evening  # -> Good evening     (HTTP 200)
+curl -i http://localhost:3000/unknown    # -> HTTP/1.1 404 Not Found
 ```
 
-Confirm dependency health at any time:
+Optional pre-flight check (no server needed):
 
 ```bash
-npm ls            # → 13_feb_2_3@1.0.0 └── express@5.2.1
-npm audit         # → found 0 vulnerabilities
-node --check index.js   # → exit 0 (syntax OK)
+node --check index.js   # exit 0 = syntax OK
+npm ls                  # -> └── express@5.2.1
 ```
 
 ### 9.6 Example Usage
 
 ```bash
-# Show HTTP status + content type for the baseline endpoint
-curl -i http://localhost:3000/
-# HTTP/1.1 200 OK
-# Content-Type: text/html; charset=utf-8
-# ...
-# Hello world
-
-# New feature endpoint
-curl -i http://localhost:3000/good-evening
-# HTTP/1.1 200 OK
-# Good evening
-
-# Unknown route returns Express's default 404
-curl -i http://localhost:3000/nope
-# HTTP/1.1 404 Not Found
-# Cannot GET /nope
+$ curl http://localhost:3000/
+Hello world
+$ curl http://localhost:3000/good-evening
+Good evening
 ```
 
 ### 9.7 Troubleshooting
 
 | Symptom | Cause | Resolution |
 |---|---|---|
-| `Error: listen EADDRINUSE :::3000` | Port 3000 already in use | Run on another port: `PORT=8080 npm start` |
-| `Error: Cannot find module 'express'` | Dependencies not installed | Run `npm install` (or `npm ci`) from the repo root |
-| `npm error Missing script: "test"` | Running `npm test` | **Expected** — no tests are in scope (AAP §0.3.2). Not an error condition. |
-| `SyntaxError` / unexpected token at boot | Node older than 18 | Upgrade Node to `>= 18` |
-| `npm ci` fails offline | No registry access / empty cache | Populate the npm cache once with network access, or use a registry mirror; the committed `package-lock.json` then guarantees reproducibility |
+| `Error: listen EADDRINUSE: address already in use :::3000` | Port 3000 already occupied | Start on another port: `PORT=3100 npm start` (override verified) |
+| `Error: Cannot find module 'express'` | Dependencies not installed | Run `npm ci` (or `npm install`) before `npm start` |
+| `npm error ... Missing script: "test"` | No test script exists | **Expected** — tests are out of scope (AAP §0.3.2); not a failure |
+| Server exits immediately / wrong Node behavior | Node version < 18 | Upgrade to Node ≥ 18 (Express 5 engines requirement) |
+| Stop the server | — | Press `Ctrl+C` (SIGINT) in the terminal running it |
 
 ---
 
@@ -343,68 +342,67 @@ curl -i http://localhost:3000/nope
 
 | Command | Purpose |
 |---|---|
-| `npm install` | Install dependencies (writes/uses `package-lock.json`) |
-| `npm ci` | Strict reproducible install from `package-lock.json` |
+| `npm ci` | Deterministic install from `package-lock.json` (66 pkgs, 0 vulns) |
+| `npm install` | Install/update dependencies and lockfile |
 | `npm start` | Start the server (`node index.js`) |
 | `PORT=8080 npm start` | Start on a custom port |
-| `npm ls` | Show the dependency tree |
+| `node --check index.js` | Syntax/compile check (no execution) |
+| `npm ls` | Show resolved dependency tree |
 | `npm audit` | Report dependency vulnerabilities |
-| `node --check index.js` | Validate JS syntax without executing |
-| `curl http://localhost:3000/` | Exercise the baseline endpoint |
-| `curl http://localhost:3000/good-evening` | Exercise the new endpoint |
+| `curl http://localhost:3000/` | Invoke the baseline endpoint |
+| `curl http://localhost:3000/good-evening` | Invoke the new endpoint |
 
 ### Appendix B — Port Reference
 
-| Port | Service | Notes |
+| Port | Source | Notes |
 |---|---|---|
-| `3000` | Express HTTP server (default) | Used when `PORT` is unset |
-| `<PORT env>` | Express HTTP server (override) | E.g., `PORT=8080`; validated |
+| `3000` | Default (`process.env.PORT || 3000`) | Used when `PORT` is unset |
+| Custom | `PORT` environment variable | e.g., `PORT=8080` / `PORT=3100`; override verified |
 
 ### Appendix C — Key File Locations
 
-| File | Role |
+| Path | Role |
 |---|---|
 | `index.js` | Express application entry — both routes + listener |
-| `package.json` | Manifest: `main`, `scripts.start`, `dependencies.express` |
-| `package-lock.json` | Locked dependency graph (lockfileVersion 3, `express@5.2.1`) |
-| `.gitignore` | Excludes `node_modules/` and npm/log artifacts |
-| `README.md` | Setup, usage, and endpoints documentation |
+| `package.json` | Manifest: `main`, `scripts.start`, `express ^5.2.1` |
+| `package-lock.json` | Locked dependency graph (lockfileVersion 3, express 5.2.1) |
+| `.gitignore` | Excludes `node_modules/` and npm log artifacts |
+| `README.md` | Setup, usage, `PORT` override, endpoints table |
 | `node_modules/` | Installed dependencies (generated, git-ignored) |
 
 ### Appendix D — Technology Versions
 
-| Technology | Version | Source |
+| Technology | Version | Notes |
 |---|---|---|
-| Express | 5.2.1 | `package.json` / `package-lock.json` |
-| Node.js (validated) | v20.20.2 | Validation environment |
-| Node.js (required) | `>= 18` | Express 5 requirement / `README.md` |
-| Node.js (AAP PoC) | v22.22.2 | `README.md` note |
-| npm | 11.1.0 | Validation environment |
-| Lockfile format | lockfileVersion 3 | `package-lock.json` |
+| Node.js | `v20.20.2` (validated); `>= 18` required | Express 5 engines requirement |
+| npm | `11.1.0` | Ships with Node |
+| Express | `5.2.1` | Declared `^5.2.1`, locked `5.2.1` |
+| Lockfile | lockfileVersion 3 | npm lockfile format |
+| Module system | CommonJS | `require`; no `"type": "module"` |
 
 ### Appendix E — Environment Variable Reference
 
-| Variable | Default | Purpose |
-|---|---|---|
-| `PORT` | `3000` | TCP port the HTTP server binds to; overridable without code changes |
+| Variable | Required | Default | Purpose |
+|---|---|---|---|
+| `PORT` | No | `3000` | TCP port the HTTP server binds to |
 
 ### Appendix F — Developer Tools Guide
 
-| Tool | Use |
+| Tool | Use in this project |
 |---|---|
-| `node --check <file>` | Static syntax validation (the project's compile gate) |
-| `npm ls` | Verify the installed dependency tree matches the manifest |
-| `npm audit` | Security scan of dependencies |
-| `curl -i <url>` | Inspect response body + status + headers for each endpoint |
-| `git status` / `git log` | Confirm a clean working tree and review commit history |
+| `node` | Runtime; `node index.js`, `node --check` |
+| `npm` | Dependency management & scripts (`ci`, `install`, `start`, `ls`, `audit`) |
+| `curl` | Manual endpoint verification |
+| `git` | Version control (branch `blitzy-…`, HEAD `d0d46b6`, clean tree) |
 
 ### Appendix G — Glossary
 
 | Term | Definition |
 |---|---|
-| **AAP** | Agent Action Plan — the authoritative requirement specification for this project |
-| **Express** | Minimalist Node.js web framework providing routing and HTTP request/response handling |
-| **CommonJS** | The module system used (`require`); the project does not declare `"type": "module"` |
-| **Greenfield** | A project with no pre-existing code; here, the repo started with only a placeholder README |
-| **Lockfile** | `package-lock.json` — pins exact dependency versions for reproducible installs |
-| **Vacuous pass** | A test gate that passes because there are zero tests to fail (tests are out of scope by design) |
+| **Express** | Minimalist Node.js web framework providing routing and HTTP request/response handling. |
+| **Endpoint / Route** | A URL path + HTTP method pair the server responds to (here, `GET /` and `GET /good-evening`). |
+| **CommonJS** | Node's classic module system using `require`/`module.exports` (used by `index.js`). |
+| **Lockfile** | `package-lock.json`, pinning exact dependency versions for reproducible installs. |
+| **Transitive dependency** | A dependency pulled in indirectly by a direct dependency (Express brings ~65). |
+| **Greenfield** | A project started from scratch — here, only a placeholder README pre-existed. |
+| **Path to production** | Standard activities (review, merge, smoke test) to take delivered code toward release. |
