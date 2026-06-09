@@ -4,7 +4,7 @@ A minimal Node.js tutorial server built with [Express](https://expressjs.com/) 5
 
 ## Prerequisites
 
-- **Node.js `>= 18`** — required by Express 5. (Validated on Node `v22.22.2` with npm `11.1.0`.)
+- **Node.js `>= 18`** — required by Express 5. (Validated on Node `v20.20.2` with npm `11.1.0`.)
 - **npm** — ships with Node.js and is used to install dependencies and run the server.
 
 ## Installation
